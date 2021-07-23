@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>../../Downloads/progress.png</file>
+        <file>img/progress.png</file>
+        <file>ProgressSpinner.qml</file>
+        <file>ErrorPopup.qml</file>
+    </qresource>
+</RCC>
