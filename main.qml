@@ -28,7 +28,7 @@ Window
     Connections
     {
         target: topWords
-        onUpdateChart:
+        function onUpdateChart(numbers, labels)
         {
             // Word counts and labels come in sorted order so that numbers[0] match labels[0]
             if (mainWindow.updateDelay)
@@ -37,12 +37,12 @@ Window
                 mainWindow.updateDelay = false
             }
         }
-        onJobDone:
+        function onJobDone(numbers, labels)
         {
             updateChart(numbers, labels)
             mainWindow.operationInProgress = false
         }
-        onErrorReadingFile:
+        function onErrorReadingFile(error)
         {
             errorPopup.messageHeader = "Some errors occurred while reading the file"
             errorPopup.bodyTextError = error
