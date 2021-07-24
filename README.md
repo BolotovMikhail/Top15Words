@@ -1,5 +1,5 @@
 # Top15Words
-A program that allows you to display the top 15 words from a text file in the form of diagrams. Words are sorted alphabetically.
+A program that allows you to display the top 15 words from a text file in the form of diagrams. Words are sorted alphabetically.  
 **[Download latest version program](release/Top15WordsRelease.exe)**
 
 ## Short description:
