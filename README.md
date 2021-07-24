@@ -1,5 +1,6 @@
 # Top15Words
 A program that allows you to display the top 15 words from a text file in the form of diagrams. Words are sorted alphabetically.
+**[Download latest version program](release/Top15WordsRelease.exe)**
 
 ## Short description:
 - A file is selected (the "Choose file" button) for frequency analysis of words.
