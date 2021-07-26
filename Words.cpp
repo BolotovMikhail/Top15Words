@@ -1,5 +1,5 @@
-#include "Words.h"
 #include <algorithm>
+#include "Words.h"
 
 Words::Words()
 {
@@ -32,7 +32,7 @@ void Words::appendString(QString& line)
         }
         else
         {
-            // New entry, add value to mainMap with 1
+            // New entry, add value to mainMap with key "1"
             mainMap.insert(std::make_pair(1, word));
         }
     }

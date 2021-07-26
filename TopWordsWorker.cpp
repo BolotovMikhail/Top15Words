@@ -1,6 +1,6 @@
-#include "TopWordsWorker.h"
 #include <QThread>
 #include <QFile>
+#include "TopWordsWorker.h"
 #include <Words.h>
 
 TopWordsWorker::TopWordsWorker()
@@ -34,8 +34,6 @@ void TopWordsWorker::startJobSlot()
                 QString line = file.readLine();
                 // Extract words from string and add them to multimap to sort by number of occurrences
                 words.appendString(line);
-                // Sorting the top 15 words alphabetically and preparing the resulting lists
-                words.prepareOutput();
                 // Sending intermediate top 15 words and their number of occurrences to update the diagram
                 /* Little optimization:
                  * int counter = 0;
@@ -44,7 +42,11 @@ void TopWordsWorker::startJobSlot()
                  * this way, sorting will occur less frequently
                  */
                 if (updateCounter%20 == 0)
+                {
+                    // Sorting the top 15 words alphabetically and preparing the resulting lists
+                    words.prepareOutput();
                     emit someWorkIsReady(words, words.getLabels());
+                }
                 updateCounter+=1;
             }
             file.close();

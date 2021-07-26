@@ -11,8 +11,8 @@
 
 class Words
 {
-    // MultiMap is used to sort words by the number of occurrences
-    std::multimap<int, QString> mainMap; // <numbers, labels>
+    // multimap<int, QString> is used to sort words by the number of occurrences
+    std::multimap<int, QString> mainMap; // multimap<numbers, labels>
     // Saves the intermediate result for updating the chart.
     // Contains 15 occurrences sorted alphabetically
     std::multimap<QString, std::pair<int, QString>> alphabetMap;

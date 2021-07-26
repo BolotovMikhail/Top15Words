@@ -16,6 +16,9 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
 
+    app.setOrganizationName("noname");
+    app.setOrganizationDomain("nodomain");
+
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages) {

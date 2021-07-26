@@ -16,13 +16,13 @@ Window
 
     property bool operationInProgress: false // true if the operation is to find words in progress
     property bool openFileDialog: false // it is set to true by clicking on the "Choose file" button. A file dialog opens.
-    property bool updateDelay: false // set to true when the timer interval is reached. Needed for smooth chart updates.
+    property bool isReadyUpdateChart: false // set to true when the timer interval is reached. Needed for smooth chart updates.
     property int chartMaxScale: 2 // default value
 
     Timer
     {
         interval: 500; running: true; repeat: true
-        onTriggered: mainWindow.updateDelay = true
+        onTriggered: mainWindow.isReadyUpdateChart = true
     }
 
     Connections
@@ -31,10 +31,10 @@ Window
         function onUpdateChart(numbers, labels)
         {
             // Word counts and labels come in sorted order so that numbers[0] match labels[0]
-            if (mainWindow.updateDelay)
+            if (mainWindow.isReadyUpdateChart)
             {
                 updateChart(numbers, labels)
-                mainWindow.updateDelay = false
+                mainWindow.isReadyUpdateChart = false
             }
         }
         function onJobDone(numbers, labels)
